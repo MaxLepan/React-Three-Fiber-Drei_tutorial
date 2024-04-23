@@ -1,10 +1,11 @@
-import { OrbitControls, PivotControls, TransformControls } from "@react-three/drei"
+import { Html, OrbitControls, PivotControls, TransformControls } from "@react-three/drei"
 import { useRef } from "react"
 
 export default function Experience()
 {
 
     const cube = useRef()
+    const sphere = useRef()
 
     return <>
 
@@ -21,9 +22,18 @@ export default function Experience()
             scale={ 75 }
             fixed={ true }
             >
-            <mesh position-x={ - 2 }>
+            <mesh position-x={ - 2 } ref={ sphere }>
                 <sphereGeometry />
                 <meshStandardMaterial color="orange" />
+                <Html 
+                    position={ [ 1, 1, 0 ] }
+                    wrapperClass="label"
+                    center
+                    distanceFactor={ 6 }
+                    occlude={[ cube, sphere ]}
+                >
+                    That's a sphere :)
+                </Html>
             </mesh>
         </PivotControls>
 
