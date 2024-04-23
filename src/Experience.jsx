@@ -1,4 +1,4 @@
-import { Html, OrbitControls, PivotControls, TransformControls, Text } from "@react-three/drei"
+import { Html, OrbitControls, PivotControls, TransformControls, Text, Float } from "@react-three/drei"
 import { useRef } from "react"
 
 export default function Experience()
@@ -48,16 +48,22 @@ export default function Experience()
             <meshStandardMaterial color="greenyellow" />
         </mesh>
 
-        <Text
-            font="./bangers-v20-latin-regular.woff"
-            fontSize={ 1 }
-            color={ 'salmon' }
-            position-y={ 2 }
-            maxWidth={ 2 }
-            textAlign="center"
+        <Float
+            speed={ 5 }
+            floatIntensity={ 2.5 }
         >
-            POW !
-        </Text>
+            <Text
+                font="./bangers-v20-latin-regular.woff"
+                fontSize={ 1 }
+                color={ 'salmon' }
+                position-y={ 2 }
+                maxWidth={ 2 }
+                textAlign="center"
+            >
+                POW !
+            </Text>
+        </Float>
+        
 
     </>
 }
